@@ -29,7 +29,7 @@ class App extends Component {
   toggleTaskStatus(taskIndex) {
     console.log("toggleTaskStatus");
     let tasks = JSON.parse(JSON.stringify(this.state.tasks));   
-    this.tasks[taskIndex].isComplete = !this.tasks[taskIndex].isComplete;
+    tasks[taskIndex].isComplete = !tasks[taskIndex].isComplete;
     this.setState({
       tasks: tasks
     });
@@ -37,7 +37,7 @@ class App extends Component {
     deleteTask(taskIndex) {
       console.log("deleteTask");
       let tasks = JSON.parse(JSON.stringify(this.state.tasks));
-      this.tasks.splice(taskIndex, 1);
+      tasks.splice(taskIndex, 1);
       this.setState({
         tasks: tasks
       });

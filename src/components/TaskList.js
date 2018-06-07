@@ -9,7 +9,7 @@ class TaskList extends React.Component {
             { tasks.map((task, index) =>
                 <Task 
                     task={task}
-                    taskIndex={index} 
+                    index={index} 
                     toggleTaskStatus={this.props.toggleTaskStatus} 
                     deleteTask={this.props.deleteTask}
                 />

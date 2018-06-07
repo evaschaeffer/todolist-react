@@ -5,13 +5,16 @@ class Task extends React.Component {
     onDeleteClick(event){
         event.preventDefault();
         const deleteTask = this.props.deleteTask;
-        const index = this.props.index;
-        deleteTask(index);
+        //const index = this.props.index;
+        deleteTask(this.props.index);
     }
-
+    onChange(event){
+        const onChange = this.props.toggleTaskStatus;
+        onChange(this.props.index);
+    }
     render() {
         const task = this.props.task;
-        const onChange = this.props.toggleTaskStatus;
+        const onChange = this.onChange.bind(this);
         const onDeleteClick = this.onDeleteClick.bind(this);
         const taskClassName = (task.isComplete) ?
         'col-md-10 col-xs-10 col-lg-10 col-sm-10 task-text complete' :

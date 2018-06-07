@@ -15,14 +15,13 @@ class TaskForm extends React.Component {
      submitTask (event) {
         event.preventDefault(); // don’t submit the form
         const { task } = this.state; // get the task from the state
-        const { addTask } = this.props.addTask; // the method from the App
+        const { addTask } = this.props; // the method from the App
         addTask(task); // the form calls a method on the App and passes the task
         this.setState( {task : ""} ); // clear the task in the class (and on the web page)
     }
     render() {
         return (
             <div className="row input-area">
-            <p>This is the Task form, I like it</p>
                 { <form onSubmit={this.submitTask}>
                     <div className="col-md-1">
                         <label htmlFor="task">Task:</label>
